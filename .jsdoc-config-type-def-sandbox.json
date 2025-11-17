@@ -1,0 +1,34 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [
+      "jsdoc",
+      "closure"
+    ]
+  },
+  "source": {
+    "include": [
+      "lib/sandbox/pmapi.js",
+      "lib/sandbox/execute-context.js",
+      "lib/sandbox/cookie-jar.js"
+    ],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [
+    "tsd-jsdoc/dist/plugin",
+    "./npm/utils/jsdoc-custom-tags-plugin.js"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "default": {
+      "outputSourceFiles": false
+    }
+  },
+  "opts": {
+    "destination": "./types/sandbox/",
+    "template": "tsd-jsdoc/dist",
+    "outFile": "index.d.ts",
+    "recurse": true
+  }
+}
